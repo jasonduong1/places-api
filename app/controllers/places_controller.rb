@@ -7,7 +7,7 @@ class PlacesController < ApplicationController
   def create
     place = Place.new(
       name: params[:name],
-      address: params[:address]
+      address: params[:address],
     )
     if place.save
       render json: place
@@ -37,6 +37,4 @@ class PlacesController < ApplicationController
     place.destroy
     render json: { message: "Place successfully destroyed!" }
   end
-end
-
 end
